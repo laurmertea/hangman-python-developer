@@ -9,3 +9,6 @@ With functions, loops, lists and other variables, this is a great project for Py
 
 ### Stage 1/8: Hello, Hangman
 Welcome the user and print “The game will be available soon”.
+
+### Stage 2/8: Let’s play a game
+At this stage, the player will have only one chance to guess the word. Learn how to use “Input” and “if” to implement the most basic version of the game.
