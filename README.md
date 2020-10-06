@@ -12,3 +12,6 @@ Welcome the user and print “The game will be available soon”.
 
 ### Stage 2/8: Let’s play a game
 At this stage, the player will have only one chance to guess the word. Learn how to use “Input” and “if” to implement the most basic version of the game.
+
+### Stage 3/8: Make your choice
+Make the game more challenging! Now it will randomly choose one of four words from a list.
