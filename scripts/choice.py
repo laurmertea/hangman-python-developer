@@ -24,3 +24,20 @@
 # H A N G M A N
 # Guess the word: > kotlin
 # You lost!
+
+import random
+
+GAME_TITLE = 'H A N G M A N'
+GAME_INPUT_MESSAGE = 'Guess the word: '
+GAME_SUCCESS_MESSAGE = 'You survived!'
+GAME_FAIL_MESSAGE = 'You lost!'
+
+words = ['python', 'java', 'kotlin', 'javascript']
+
+print(GAME_TITLE)
+user_input = str(input(GAME_INPUT_MESSAGE))
+
+if user_input == random.choice(words):
+    print(GAME_SUCCESS_MESSAGE)
+else:
+    print(GAME_FAIL_MESSAGE)
