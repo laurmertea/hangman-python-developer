@@ -15,3 +15,6 @@ At this stage, the player will have only one chance to guess the word. Learn how
 
 ### Stage 3/8: Make your choice
 Make the game more challenging! Now it will randomly choose one of four words from a list.
+
+### Stage 4/8: Help is on the way
+Enable hints in your game. Allow it to show the number of letters and the first three letters. Slicing will help you to implement this part.
