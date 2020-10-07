@@ -18,3 +18,6 @@ Make the game more challenging! Now it will randomly choose one of four words fr
 
 ### Stage 4/8: Help is on the way
 Enable hints in your game. Allow it to show the number of letters and the first three letters. Slicing will help you to implement this part.
+
+### Stage 5/8: Keep trying
+Using a loop, extend the number of attempts to eight. Now we’re talking!
