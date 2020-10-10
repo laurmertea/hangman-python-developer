@@ -24,3 +24,6 @@ Using a loop, extend the number of attempts to eight. Now we’re talking!
 
 ### Stage 6/8: The value of life
 The outcome of the game may be “fatal”: a feature that makes the game all the more exciting. Work on implementing this feature so that players don’t lose “lives” if they guess the letter correctly. The While loop will help. 
+
+### Stage 7/8: Error!
+Improve the game by handling different error cases. Repetition of a letter, entering words that are too long, or using non-Latin characters shouldn’t cost your player a life. 
