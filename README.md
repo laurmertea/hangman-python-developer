@@ -21,3 +21,6 @@ Enable hints in your game. Allow it to show the number of letters and the first 
 
 ### Stage 5/8: Keep trying
 Using a loop, extend the number of attempts to eight. Now we’re talking!
+
+### Stage 6/8: The value of life
+The outcome of the game may be “fatal”: a feature that makes the game all the more exciting. Work on implementing this feature so that players don’t lose “lives” if they guess the letter correctly. The While loop will help. 
