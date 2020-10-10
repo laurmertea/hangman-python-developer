@@ -119,3 +119,85 @@
 # Input a letter: > v
 # You guessed the word java!
 # You survived!
+
+import random
+import string
+
+GAME_TITLE = "H A N G M A N"
+GAME_INPUT_MESSAGE = "Guess the word "
+GAME_INPUT_LETTER_MESSAGE = "Input a letter: "
+GAME_LETTER_NOT_FOUND_MESSAGE = "That letter doesn't appear in the word"
+GAME_SUCCESS_MESSAGE = "You survived!"
+GAME_FAIL_MESSAGE = "You lost!"
+GAME_UNSUPPORTED_INPUT = "Please enter a lowercase English letter"
+GAME_INCORRECT_INPUT_LENGTH = "You should input a single letter"
+GAME_ALREADY_GUESSED = "You've already guessed this letter"
+GAME_END_MESSAGE = "Thanks for playing!\nWe'll see how well you did in the next stage"
+DEFAULT_TRIES = 8
+
+words = ['python', 'java', 'kotlin', 'javascript']
+computer_choice = random.choice(words)
+current_guessed = ''
+tries = 0
+valid = False
+guessed = False
+found_letters = set()
+tried_letters = set()
+mystery_word = "-" * len(computer_choice)
+
+def search_letter(letter):
+    global computer_choice
+    global found_letters
+    global tried_letters
+    global tries
+
+    if letter in tried_letters:
+        print(GAME_ALREADY_GUESSED)
+    else:
+        if letter in set(computer_choice):
+            if letter in found_letters:
+                print(GAME_ALREADY_GUESSED)            
+            else:
+                found_letters.add(letter)
+        else:
+            tried_letters.add(letter)
+            tries += 1
+            print(GAME_LETTER_NOT_FOUND_MESSAGE)           
+
+def unmask():
+    global computer_choice
+    global found_letters
+
+    masked = "-" * len(computer_choice)
+    masked_list = [*masked]
+
+    for letter in found_letters:
+        for index, char in enumerate([*computer_choice]):
+            if letter == char:
+                masked_list[index] = letter
+
+    print("\n" + ''.join(masked_list))
+    return ''.join(masked_list)
+
+print(GAME_TITLE)
+
+while tries < DEFAULT_TRIES:
+    if current_guessed != computer_choice:
+        while valid == False:
+            current_guessed = unmask()
+            user_input = str(input(GAME_INPUT_LETTER_MESSAGE))
+            if len(user_input) == 1 and all((True if char in string.ascii_lowercase else False for char in user_input)) == True:
+                valid = True
+            else:
+                if len(user_input) != 1:
+                    print(GAME_INCORRECT_INPUT_LENGTH)
+                if all((True if char in string.ascii_lowercase else False for char in user_input)) == False:
+                    print(GAME_UNSUPPORTED_INPUT)
+        search_letter(user_input)
+        valid = False
+    else:
+        print(GAME_SUCCESS_MESSAGE)
+        guessed = True
+        break        
+if not guessed:
+    print(GAME_FAIL_MESSAGE)
